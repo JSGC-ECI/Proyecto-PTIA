@@ -1,0 +1,25 @@
+% El siguiente comando es usado para crear las cajas de firmas
+\newcommand*\wildcard[2][6cm]{\vspace{2cm}\parbox{#1}{\hrulefill\par#2}} 
+
+\section*{Declaración firmada}
+
+\vspace{1cm}
+
+“Declaro que he escrito este trabajo de investigación por mí mismo, y que no he utilizado otras fuentes o recursos que los indicados para su preparación. Declaro que he indicado claramente todas las citas directas e indirectas, y que este documento no se ha presentado en otro lugar para fines de examen o publicación"
+
+\vspace{3cm}
+\textbf{Nombre del estudiante \& Firma:}
+\vspace{1cm}
+
+\begingroup
+
+    \begin{center}
+        \wildcard{\centerline{<Nombre estudiante>} ~\\ \centerline{Fecha: <día> de <mes> de <año>}}
+        \hspace{2cm} % "hspace{}"  para espacio horizontal entre misma fila
+        \wildcard{\centerline{<Nombre estudiante>} ~\\ \centerline{Fecha: <día> de <mes> de <año>} }
+    \end{center}
+
+\endgroup
+
+
+\pagebreak

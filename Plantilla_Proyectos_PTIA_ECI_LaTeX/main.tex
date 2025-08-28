@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IMPORTANTE: Cambiar el compilador a XeLaTeX en las opciones %
+%          Plantilla ECI basada en U Pontificia Chile         %
+%               Creditos Github: @diegocostares               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{style}
+\addbibresource{bibliography/references.bib}
+
+\begin{document}
+%%%%%%%%%%%%%%%%% RENOMBRE %%%%%%%%%%%%%%%%%
+\graphicspath{ {./img/} }
+\renewcommand{\contentsname}{Índice de contenido}
+\renewcommand{\listfigurename}{Índice de figuras}
+\renewcommand{\listtablename}{Índice de Tablas}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\figurename}{Imagen}
+\renewcommand*{\lstlistingname}{Código}
+
+
+%%%%%%%%%%%%%%%%% ENCABEZADO %%%%%%%%%%%%%%%%%
+% Si se quiere eliminar, se tiene que quitar tambien las configuraciones del style.cls
+\fancyhead[L]{ % Encabezado a la izquierda
+  \begin{picture}(0,0) \put(0,30){\includegraphics[width=25mm]{img/logo_eci.png}} \end{picture}
+  \put(75,40){\textcolor{gray}{\scriptsize{\begin{tabular}{l}
+    ESCUELA COLOMBIANA DE INGENIERÍA JULIO GARAVITO\\
+    DEPARTAMENTO DE INGENIERÍA DE SISTEMAS
+  \end{tabular}}}}
+}
+% Si se quiere agregar a la derecha remplazar:
+\rhead{} % Opcion 1
+%\rhead{\begin{picture}(0,0) \put(-85,12){\includegraphics[width=30mm]{img/IMAGEN.png}} \end{picture}} % Opcion 2
+
+
+%%%%%%%%%%%%%%%%% PORTADA %%%%%%%%%%%%%%%%%
+% Opcion 1: Importar un pdf tamaño carta de EEUU
+%\includepdf[pages=-]{img/Portada.pdf} % cambiar portada por pdf
+% Opcion 2: Escribir una portada completa
+\input{content/portada}
+% Opcion 3: Sin portada - Se recomienda quitar indices
+
+%%%%%%%%%%%%%%%%% PRELIMINARES %%%%%%%%%%%%%%%%
+
+\input{content/declaracion}
+
+%%%%%%%%%%%%%%%%% INDICES %%%%%%%%%%%%%%%%%
+\setstretch{1}
+\tableofcontents
+\listoftables
+\listoffigures
+%\lstlistoflistings % Para hacer indice de codigo
+
+%%%%%%%%%%%%%%%%% ESPACIADO %%%%%%%%%%%%%%%%%
+\setstretch{1.15} 
+
+
+%%%%%%%%%%%%%%%%% CONTENIDO %%%%%%%%%%%%%%%%%
+\newpage
+%\input{content/tutorial} % HABILITAR Y DESHABILITAR PARA TENER EJEMPLOS
+\input{content/introduccion}
+\input{content/trabajos_relacionados}
+\input{content/descripcion_problema}
+\input{content/justificacion}
+\input{content/alcance_objetivos}
+\input{content/diseno}
+\input{content/resultados}
+\input{content/conclusiones}
+
+
+%%%%%%%%%%%%%%%%% BIBLIOGRAFIA %%%%%%%%%%%%%%%%%
+\newpage
+\printbibliography
+
+%%%%%%%%%%%%%%%%%%% ANEXOS %%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+%\input{anexos/anexo_LaTeX} % HABILITAR Y DESHABILITAR PARA TENER EJEMPLOS
+
+\end{document}
